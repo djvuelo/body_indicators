@@ -33,6 +33,22 @@ services:
     image: redis:latest
     ports:
     - 6380:6379
+  st-agent:
+    image: sematext/agent:latest
+    environment:
+      - INFRA_TOKEN=381660b9-9ddb-4466-a90e-22040aaf2378
+      - REGION=EU
+    cap_add:
+      - SYS_ADMIN
+    restart: always
+    volumes:
+      - /:/hostfs:ro
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - /var/run/:/var/run
+      - /sys/kernel/debug:/sys/kernel/debug
+      - /sys:/host/sys:ro
+      - /dev:/hostfs/dev:ro
 
 volumes:
   mysql:
