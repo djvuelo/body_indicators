@@ -12,7 +12,7 @@ services:
       - ./:/app
 
   mysqldb:
-    image: mysql
+    image: mysql:latest
     restart: always
     ports:
       - 3306:3306
@@ -22,7 +22,7 @@ services:
       - mysql:/var/lib/mysql
       - mysql_config:/etc/mysql
   myphpmyadmin:
-    image: phpmyadmin
+    image: phpmyadmin:5.1.1-fpm-alpine
     restart: always
     ports:
       - 8080:80
