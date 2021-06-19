@@ -8,12 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return test_test.test('Hello-test-new')
-
-
-@app.route('/gg')
-def hello_gg():
-    return 'GGGergeojoepihjpoaer'
+    return 'Hello world'
 
 
 @app.route('/widgets')
