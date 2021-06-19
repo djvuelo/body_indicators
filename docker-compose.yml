@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     ports:
       - 5000:5000
     volumes:
@@ -12,6 +13,7 @@ services:
 
   mysqldb:
     image: mysql
+    restart: always
     ports:
       - 3306:3306
     environment:
@@ -21,6 +23,7 @@ services:
       - mysql_config:/etc/mysql
   myphpmyadmin:
     image: phpmyadmin
+    restart: always
     ports:
       - 8080:80
     environment:
@@ -31,6 +34,7 @@ services:
       - PMA_PASSWORD=p@ssw0rd1
   redis:
     image: redis:latest
+    restart: always
     ports:
     - 6380:6379
   st-agent:
