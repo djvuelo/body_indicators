@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello world'
+    return 'Hello worldh'
 
 
 @app.route('/widgets')
@@ -58,7 +58,6 @@ def db_init():
     cursor.execute("DROP TABLE IF EXISTS widgets")
     cursor.execute("CREATE TABLE widgets (name VARCHAR(255), description VARCHAR(255))")
     cursor.close()
-
     return 'init database'
 
 
