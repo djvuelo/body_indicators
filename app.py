@@ -10,7 +10,7 @@ def hello_world():
     return 'Hello worldh'
 
 
-@app.route('/widgets')
+@app.route('/widgetss')
 def get_widgets():
     mydb = mysql.connector.connect(
         host="mysqldb",
